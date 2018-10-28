@@ -1,0 +1,50 @@
+// =============================================================================
+// Quire-cover.scss
+// -----------------------------------------------------------------------------
+// Cover component (used in the layout for 'cover' page types)
+
+// Variables
+// -----------------------------------------------------------------------------
+$quire-cover-color: $cyan !default;
+$quire-cover-text-color: findColorInvert($quire-cover-color) !default;
+
+$quire-footer-color: $light !default;
+$quire-footer-text-color: findColorInvert($quire-footer-color) !default;
+
+.quire-cover {
+  background-color: $quire-cover-color;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include foreground-color($quire-cover-color, $quire-cover-text-color);
+
+  &.hero.is-fullheight {
+    min-height: calc(100vh - #{$navbar-height});
+  }
+
+  .subtitle {
+    display: block;
+    margin-top: .35em;
+  }
+
+}
+
+.quire-cover-footer {
+  background-color: $quire-footer-color;
+
+  @include foreground-color($quire-footer-color, $quire-footer-text-color);
+
+  a.quire-copyright__icon__link:hover {
+    background-color: transparent;
+  }
+
+  .quire-publisher-logos {
+    img {
+      float: right;
+      max-height: 6em;
+      margin: 0 .75em 1.5em;
+    }
+  }
+
+}

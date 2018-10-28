@@ -1,0 +1,46 @@
+{{- if isset $.Site.Params "imagedir" }}
+{{ $.Scratch.Set "imageDir" $.Site.Params.imageDir }}
+{{ else }}
+{{ $.Scratch.Set "imageDir" "" }}
+{{ end -}}
+
+{{- if .Params.image -}}
+{{- $imgPath := printf "%s/%s" ($.Scratch.Get "imageDir") .Params.image -}}
+  <section class="quire-page__header hero {{ if eq .Params.layout "splash" }}is-fullheight{{ else }}is-medium{{ end }}" style="background-image: url('{{ $imgPath | absURL }}');">
+{{- else -}}
+  <section class="quire-page__header hero {{ if eq .Params.layout "splash" }}is-fullheight{{ else }}is-medium{{ end }}">
+{{- end -}}
+  <div class="hero-body">
+    <div class="container has-text-centered">
+
+      {{/* Page Title */}}
+      <h1 class="title is-size-1">
+        {{ with .Params.number }}<span>{{ . }}.</span>{{ end }}
+        {{ .Title | markdownify }}
+        {{ with .Params.subtitle }}
+        <span class="subtitle is-size-3">{{ . }}</span>
+        {{ end }}
+      </h1>
+
+      {{/* Contributors, if any */}}
+      {{ with .Params.contributor }}
+      <div class="contributor is-size-5">
+        {{ partial "contributor-list.html" (dict "range" . "contributorType" "all" "listType" "list-plus") }}
+      </div>
+      {{ end }}
+
+      {{/* Essay pages have additional controls (quick links to content, biblio) */}}
+      {{ if (eq .Type "essay") }}
+      <div class="tabs is-centered" role="navigation" aria-label="page">
+        <ul>
+          <li><a href="#content">Main Text</a></li>
+          {{ if ($.Scratch.GetSortedMapValues "cited") }}
+          <li><a href="#bibliography">Bibliography</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+    </div>
+  </div>
+</section>

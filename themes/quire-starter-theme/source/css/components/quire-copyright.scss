@@ -1,0 +1,16 @@
+// =============================================================================
+// Quire-menu.scss
+// -----------------------------------------------------------------------------
+// Styling for copyright and license info which normally appears at the bottom
+// of the site menu.
+
+.quire-copyright {
+  padding: 0 1em;
+
+  &__icon {
+    height: 2.5em;
+    & img {
+      max-height: 100%;
+    }
+  }
+}
