@@ -1,18 +1,8 @@
-## The First Part: Guatemala
-	### The First Decade: Childhood
-	### The Second Decade: Apprenticeship
-	### The Third Decade: School Overseer
-	### The Fourth Decade: Pena Plata and El Zambo farms
-	### The Fifth Decade: El Zambo and Las Elviras farms
-## The Second Part: Mexico
-	### 1958-1959: El Portillo farm
-	### The Sixth Decade: San Enrique farm
-## The Third Part: Epilogue
-	### 1960: The children in Tapachula
-	### 1970: Retirement to Cacahoatan
-	### 1980: Life in Cacahoatan
-	### 1990: The Peso Crisis
-	### 2000: Final Years of Daniel Morales
+---
+title: Introduction
+weight: 100
+type: essay
+---
 
 ## Prologue
 
